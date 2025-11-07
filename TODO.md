@@ -1,0 +1,2 @@
+- [ ] Edit HeroContent.tsx to replace Image with Astronaut component inside Canvas
+- [ ] Run npm run dev to test the changes and check for correctness

@@ -6,10 +6,18 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { Astronaut } from "./Astronaut";
 import React from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Float } from "@react-three/drei";
+import { useMediaQuery } from "react-responsive";
+import { easing } from "maath";
+import { Suspense } from "react";
+import Loader  from "./Loader";
+
 
 const HeroContent = () => {
+  const isMobile = useMediaQuery({ maxWidth: 853 });
   return (
     <motion.div
       initial="hidden"
@@ -57,15 +65,35 @@ const HeroContent = () => {
         variants={slideInFromRight(0.5)}
         className="w-full h-full flex justify-center items-center"
       >
-        <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-        />
+        <figure
+        className="absolute inset-0"
+        style={{ width: "100vw", height: "100vh" }}
+      >
+        <Canvas camera={{ position: [0, 1, 3] }}>
+          <Suspense fallback={<Loader />}>
+            <Float>
+              <Astronaut
+                scale={isMobile && 0.23}
+                position={isMobile && [0, -1.5, 0]}
+              />
+            </Float>
+            <Rig />
+          </Suspense>
+        </Canvas>
+      </figure>
       </motion.div>
     </motion.div>
   );
 };
+function Rig() {
+  return useFrame((state, delta) => {
+    easing.damp3(
+      state.camera.position,
+      [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
+      0.5,
+      delta
+    );
+  });
+}
 
 export default HeroContent;
