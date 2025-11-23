@@ -11,6 +11,8 @@ import { Suspense } from "react";
 import Loader from "./Loader";
 import TextType from "./TextType";
 import RotatingText from "./RotatingText";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const HeroContent = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -64,8 +66,6 @@ const HeroContent = () => {
               "Салам дүйнө",
               "Сәлем Әлем",
               "Salam Dünya",
-              "سلام دنیا",
-              "გამარჯობა მსოფლიო",
               "Բարեւ աշխարհ",
               "שָׁלוֹם עוֹלָם",
               "Mo ki o ni agbaiye",
@@ -117,12 +117,51 @@ const HeroContent = () => {
           </motion.div>
           crafting websites, mobile apps, and software solutions. My projects work surprisingly well considering the amount of coffee involved. Feel free to explore my work—it's safe, I promise.
         </motion.p>
-        <motion.a
+        <motion.div
           variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
+          className="flex space-x-6 max-w-[300px]"
         >
-          Learn More!
-        </motion.a>
+          <motion.a
+            href="https://github.com/Sankalp-Space"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaGithub />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/sankalp-space1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaLinkedin />
+          </motion.a>
+          <motion.a
+            href="https://wa.me/7351432611"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <FaWhatsapp />
+          </motion.a>
+          <motion.a
+            href="https://leetcode.com/u/sankalp-space/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-3xl"
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <SiLeetcode />
+          </motion.a>
+        </motion.div>
       </div>
       <motion.div
         variants={slideInFromRight(0.5)}
