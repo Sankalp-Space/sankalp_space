@@ -1,0 +1,10 @@
+- [ ] Fix typo in starBackground.tsx: dethWrite -> depthWrite
+- [ ] Correct preload path in Astronaut.jsx: /models/... -> /...
+- [ ] Add missing useFrame import in Astronaut.jsx
+- [ ] Fix style syntax error in Skills.tsx: scale(0.9 -> scale(0.9)
+- [ ] Correct social media icons in Footer.tsx
+- [ ] Fix component import in layout.tsx: StaggeredMenu -> BubbleMenu
+- [ ] Remove redundant Float wrapper in HeroContent.tsx
+- [ ] Remove duplicate skills from constants/index.ts
+- [ ] Review animation dependencies in package.json
+- [ ] Test application after fixes

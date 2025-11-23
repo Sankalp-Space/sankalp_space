@@ -1,2 +1,7 @@
-- [ ] Edit HeroContent.tsx to replace Image with Astronaut component inside Canvas
-- [ ] Run npm run dev to test the changes and check for correctness
+- [ ] Fix linting errors in layout.tsx, page.tsx, Footer.tsx, starBackground.tsx, HeroContent.tsx
+- [ ] Correct social media icons in Footer.tsx (Discord and Instagram swapped)
+- [ ] Remove redundant Float wrapper in HeroContent.tsx
+- [ ] Remove duplicate skills from constants/index.ts
+- [ ] Improve StaggeredMenu: fix logo path, add proper navigation links, improve responsiveness
+- [ ] Review and optimize animation dependencies
+- [ ] Test application after all fixes

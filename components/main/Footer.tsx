@@ -20,30 +20,30 @@ const Footer = () => {
                     <div className="font-bold text-[16px]">Community</div>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
                         <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Youtube</span>    
+                        <span className="text-[15px] ml-[6px]">Youtube</span>
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
                         <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Github</span>    
+                        <span className="text-[15px] ml-[6px]">Github</span>
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
                         <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Discord</span>    
+                        <span className="text-[15px] ml-[6px]">Discord</span>
                     </p>
                 </div>
                 <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
                     <div className="font-bold text-[16px]">Social Media</div>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Instagram</span>    
+                        <RxInstagramLogo />
+                        <span className="text-[15px] ml-[6px]">Instagram</span>
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Twitter</span>    
+                        <RxTwitterLogo />
+                        <span className="text-[15px] ml-[6px]">Twitter</span>
                     </p>
                     <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Linkedin</span>    
+                        <RxLinkedinLogo />
+                        <span className="text-[15px] ml-[6px]">Linkedin</span>
                     </p>
                 </div>
                 <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
