@@ -17,7 +17,6 @@ const StarBackground = (props: Record<string, unknown>) => {
     ref.current.rotation.y -= delta/15;
   })
 
-
   return (
     <group rotation={[0,0, Math.PI / 4]}>
         <Points
@@ -40,7 +39,7 @@ const StarBackground = (props: Record<string, unknown>) => {
 };
 
 const StarsCanvas = () => (
-    <div className="w-full h-auto fixed inset-0 z-[20]">
+    <div className="w-full h-auto fixed inset-0 z-[20] pointer-events-none">
         <Canvas camera={{position: [0, 0, 1]}}>
         <Suspense fallback={null}>
             <StarBackground />

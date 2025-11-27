@@ -16,6 +16,7 @@ import { SiLeetcode } from "react-icons/si";
 
 const HeroContent = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
+
   return (
     <motion.div
       initial="hidden"
@@ -63,7 +64,7 @@ const HeroContent = () => {
               "Здраво свету",
               "Halo Dunia",
               "Salom Dunyo",
-              "Салам дүйнө",
+              "Салам бүгүнүй",
               "Сәлем Әлем",
               "Salam Dünya",
               "Բարեւ աշխարհ",
@@ -100,12 +101,18 @@ const HeroContent = () => {
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-100 my-5 max-w-[600px]"
         >
-          <motion.div  variants={slideInFromRight(0.5)} className="flex">
-            <motion.p className="text-4xl  bg-none text-white  overflow-hidden  sm:py-1 md:py-2 justify-center rounded-l">I&apos;m a</motion.p>
+        <motion.div variants={slideInFromRight(0.5)} className="flex">
+          <motion.p className="text-4xl  bg-none text-white  overflow-hidden  sm:py-1 md:py-2 justify-center rounded-l">
+            I&apos;m a
+          </motion.p>
           <RotatingText
-            texts={["Software Deveoper Engineer", "Full Stack Developer", "Backend Developer",]}
+            texts={[
+              "Software Developer Engineer",
+              "Full Stack Developer",
+              "Backend Developer",
+            ]}
             mainClassName="px-2 sm:px-2 md:px-3 bg-none text-white text-4xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-            staggerFrom={"last"}
+            staggerFrom="last"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-120%" }}
@@ -114,54 +121,56 @@ const HeroContent = () => {
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
             rotationInterval={2000}
           />{" "}
-          </motion.div>
-          crafting websites, mobile apps, and software solutions. My projects work surprisingly well considering the amount of coffee involved. Feel free to explore my work—it's safe, I promise.
-        </motion.p>
-        <motion.div
-          variants={slideInFromLeft(1)}
-          className="flex space-x-6 max-w-[300px]"
-        >
-          <motion.a
-            href="https://github.com/Sankalp-Space"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaGithub />
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/sankalp-space1/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaLinkedin />
-          </motion.a>
-          <motion.a
-            href="https://wa.me/7351432611"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <FaWhatsapp />
-          </motion.a>
-          <motion.a
-            href="https://leetcode.com/u/sankalp-space/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-3xl"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <SiLeetcode />
-          </motion.a>
         </motion.div>
+        crafting websites, mobile apps, and software solutions. My projects
+        work surprisingly well considering the amount of coffee involved. Feel
+        free to explore my work—it's safe, I promise.
+      </motion.p>
+      <motion.div
+        variants={slideInFromLeft(1)}
+        className="flex space-x-6 max-w-[300px] relative z-40 pointer-events-auto"
+      >
+        <motion.a
+          href="https://github.com/Sankalp-Space"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-3xl"
+          whileHover={{ scale: 1.2 }}
+          // whileTap={{ scale: 0.9 }}
+        >
+          <FaGithub />
+        </motion.a>
+        <motion.a
+          href="https://www.linkedin.com/in/sankalp-space1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-3xl"
+          whileHover={{ scale: 1.2 }}
+          // whileTap={{ scale: 0.9 }}
+        >
+          <FaLinkedin />
+        </motion.a>
+        <motion.a
+          href="https://wa.me/7351432611"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-3xl"
+          whileHover={{ scale: 1.2 }}
+          // whileTap={{ scale: 0.9 }}
+        >
+          <FaWhatsapp />
+        </motion.a>
+        <motion.a
+          href="https://leetcode.com/u/sankalp-space/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-3xl"
+          whileHover={{ scale: 1.2 }}
+          // whileTap={{ scale: 0.9 }}
+        >
+          <SiLeetcode />
+        </motion.a>
+      </motion.div>
       </div>
       <motion.div
         variants={slideInFromRight(0.5)}
