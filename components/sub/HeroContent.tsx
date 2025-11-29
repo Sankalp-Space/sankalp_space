@@ -123,8 +123,8 @@ const HeroContent = () => {
           />{" "}
         </motion.div>
         crafting websites, mobile apps, and software solutions. My projects
-        work surprisingly well considering the amount of coffee involved. Feel
-        free to explore my work—it's safe, I promise.
+        work surprisingly well considering the amount of chai involved. Feel
+        free to explore my work it's safe, I promise.
       </motion.p>
       <motion.div
         variants={slideInFromLeft(1)}

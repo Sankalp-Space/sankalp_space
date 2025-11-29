@@ -131,21 +131,33 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
       )}
       viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
     >
-      <path
-        d={pathD}
-        stroke={pathColor}
-        strokeWidth={pathWidth}
-        strokeOpacity={pathOpacity}
-        strokeLinecap="round"
-      />
-      <path
+      {/* base stroke (subtle) */}
+      <path d={pathD} stroke={pathColor} strokeWidth={pathWidth} strokeOpacity={Math.max(pathOpacity * 0.8, 0.15)} strokeLinecap="round" />
+
+      {/* soft glow behind main stroke */}
+      <path d={pathD} stroke={`url(#${id})`} strokeWidth={Math.max(pathWidth * 3, 6)} strokeOpacity={0.18} strokeLinecap="round" style={{ filter: `blur(8px)` }} />
+
+      {/* animated dash moving along the path */}
+      <motion.path
         d={pathD}
         strokeWidth={pathWidth}
         stroke={`url(#${id})`}
-        strokeOpacity="1"
+        strokeOpacity={1}
         strokeLinecap="round"
+        strokeDasharray={200}
+        initial={{ strokeDashoffset: 0 }}
+        animate={{ strokeDashoffset: [0, -200] }}
+        transition={{ repeat: Infinity, duration: Math.max(3, duration), ease: "linear" }}
       />
+
       <defs>
+        <filter id={`glow-${id}`} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
         <motion.linearGradient
           className="transform-gpu"
           id={id}
