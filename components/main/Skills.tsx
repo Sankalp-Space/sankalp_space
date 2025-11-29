@@ -1,8 +1,8 @@
 "use client";
 import Shuffle from "../sub/Shuffle";
 import LogoLoop from "../sub/LogoLoop";
-import CurvedLoop from "../sub/CurvedLoop";
-// LogoLoop is a JS component without TypeScript typings; cast to `any` for prop usage
+import FeatureGrid from "../sub/FeatureGrid";
+
 const LogoLoopAny: any = LogoLoop;
 
 import {
@@ -17,7 +17,6 @@ import {
   SiTailwindcss,
   SiMongodb,
   SiMysql,
-  SiAmazonwebservices,
   SiGit,
   SiGithub,
   SiPostman,
@@ -76,7 +75,7 @@ const Skills = () => {
     },
     {
       id: "aws",
-      node: <SiAmazonwebservices className="text-4xl text-amber-400" />,
+      node: <span className="text-base font-semibold">AWS</span>,
       title: "AWS",
     },
     {
@@ -168,17 +167,8 @@ const Skills = () => {
           </div>
         </div>
         <div>
-          
-        </div>
-        <div>
-          <CurvedLoop
-            marqueeText="Be ✦ Creative ✦ With ✦ React ✦ Bits ✦"
-            speed={3}
-            curveAmount={100}
-            direction="right"
-            interactive={true}
-            className="custom-text-style "
-          />
+          {/* Feature grid (Multiple Tech Stack, Dev & Design, Open to Collaborations) */}
+          <FeatureGrid />
         </div>
       </div>
     </section>

@@ -1,0 +1,113 @@
+"use client";
+
+import React, { useRef } from 'react';
+
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@/components/ui/terminal";
+
+import { AnimatedBeam } from "@/components/ui/animated-beam";
+import {
+  SiC,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiDocker,
+  SiGithub,
+  SiTailwindcss,
+  SiFigma,
+  SiMysql,
+  SiKubernetes,
+} from 'react-icons/si';
+
+
+const scatteredIcons = [
+  SiC,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiDocker,
+  SiGithub,
+  SiTailwindcss,
+  SiMysql,
+  SiKubernetes,
+];
+
+export default function FeatureGrid() {
+  const containerRef = useRef<HTMLElement | null>(null);
+  const leftRef = useRef<HTMLElement | null>(null);
+  const centerRef = useRef<HTMLElement | null>(null);
+  const rightRef = useRef<HTMLElement | null>(null);
+
+  return (
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Left large panel */}
+      <div className="bg-slate-900/80 border border-emerald-800/20 rounded-xl p-6 shadow-lg relative overflow-hidden">
+        <Terminal>
+          <TypingAnimation>initializing starship_sankalp...</TypingAnimation>
+          <AnimatedSpan>loading modules: scalable thrusters, secure shields, hyper-performant UI</AnimatedSpan>
+          <AnimatedSpan>validating subsystem integrity... ✔</AnimatedSpan>
+          <AnimatedSpan>performing systems check... all green</AnimatedSpan>
+          <TypingAnimation>executing deployment sequence...</TypingAnimation>
+          <TypingAnimation>status: online across the galaxy 🌌</TypingAnimation>
+          <TypingAnimation>Logs: No errors... which is suspicious</TypingAnimation>
+        </Terminal>
+
+      </div>
+
+      {/* Right column with two stacked cards */}
+      <div className="space-y-6">
+        {/* Top right card: Dev & Design with animated beams */}
+        <div ref={containerRef} className="bg-slate-900/80 border border-emerald-700/30 rounded-xl p-6 shadow-lg relative overflow-hidden">
+          {/* Animated beams between left->center and center->right */}
+          <AnimatedBeam containerRef={containerRef} fromRef={leftRef} toRef={centerRef} gradientStartColor="#9cff4a" gradientStopColor="#d0ff7a" delay={0} duration={4} />
+          <AnimatedBeam containerRef={containerRef} fromRef={centerRef} toRef={rightRef} gradientStartColor="#9cff4a" gradientStopColor="#d0ff7a" delay={1} duration={4} reverse />
+
+          <div className="flex items-center justify-evenly gap-8 py-8">
+            <div ref={leftRef} className="w-12 h-12 grid place-items-center rounded-lg bg-white text-slate-100/90">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <ellipse cx="12" cy="5" rx="8" ry="3" stroke="#808080" strokeWidth="1.2" fill="#052018" />
+                 <path d="M4 5v6c0 1.657 3.582 3 8 3s8-1.343 8-3V5" stroke="#808080" strokeWidth="1.2" fill="none" />
+                 <path d="M4 11v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" stroke="#808080" strokeWidth="1.2" fill="none" />
+                </svg>
+            </div>
+
+            <div ref={centerRef} className="w-20 h-20 grid place-items-center rounded-2xl  shadow-[0_0_30px_#b8ff4a33]">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="12" rx="2" stroke="#ffffff" strokeWidth="1.2" />
+                <rect x="7" y="16" width="10" height="2" rx="1" fill="#ffffff" />
+              </svg>
+            </div>
+
+            <div ref={rightRef} className="w-12 h-12 grid place-items-center rounded-lg bg-white text-slate-100/90">
+              <SiFigma className="text-2xl text-pink-400" />
+            </div>
+          </div>
+
+          <div className="ml-6">
+            <h3 className="text-2xl font-semibold">Dev & <span className="text-emerald-400 italic">Design</span></h3>
+            <p className="mt-3 text-slate-300">
+              Turning solid engineering and smart design into great user experiences.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom right card */}
+        <div className="bg-slate-900/80 border border-emerald-700/30 rounded-xl overflow-hidden">
+          <div className="md:flex md:items-stretch">
+            <div className="md:flex-1 p-6">
+              <h3 className="text-2xl font-semibold text-white">Open to <span className="text-emerald-400 italic">Collaborations</span></h3>
+              <p className="mt-3 text-slate-300 max-w-2xl">Whether a small minor project or your next big SaaS, I am always open to collaborations and new projects.</p>
+            </div>
+            <div className="hidden md:block md:w-1/3 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+              <div className="relative h-full w-full bg-[url('/images/macbook-pro.jpg')] bg-cover bg-center" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
