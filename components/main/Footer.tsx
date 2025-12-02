@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   RxGithubLogo,
   RxInstagramLogo,
@@ -8,11 +8,23 @@ import {
 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
+import { Confetti, ConfettiRef } from "@/components/ui/confetti";
+import { Globe } from "@/components/ui/globe"
 
 const Footer = () => {
   // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
   const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "YOUR_FORM_ID";
   const [state, handleSubmit] = useForm(formspreeId);
+  const confettiRef = useRef<ConfettiRef>(null);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      confettiRef.current?.fire({
+        particleCount: 150,
+        spread: 100,
+      });
+    }
+  }, [state.succeeded]);
 
   const links = [
     { name: "Home", href: "/" },
@@ -32,6 +44,11 @@ const Footer = () => {
 
   return (
     <div id="contact" className="w-full h-full bg-transparent text-gray-200 shadow-lg p-8 md:p-12 relative z-30">
+      <Confetti
+        ref={confettiRef}
+        manualstart={true}
+        className="absolute left-0 top-0 w-full h-full z-50 pointer-events-none"
+      />
       <div className="w-full max-w-7xl mx-auto flex flex-col">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-12">
           {/* Left Side: Links & Socials */}
@@ -79,7 +96,7 @@ const Footer = () => {
           {/* Right Side: Email Form */}
           <div className="md:col-span-2 flex flex-col justify-center items-start">
             <h3 className="text-2xl font-bold text-white mb-2">
-              I know the chemistry you know the business 😉
+              I know the chemistry you know the business .. Let's talk!
             </h3>
             <p className="text-gray-400 mb-6">
               Drop your email and I&apos;ll contact you soon ;)
@@ -121,6 +138,9 @@ const Footer = () => {
                 />
               </form>
             )}
+          </div>
+          <div>
+            <Globe />
           </div>
         </div>
 
