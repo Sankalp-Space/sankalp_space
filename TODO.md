@@ -1,9 +1,15 @@
-# TODO: Improve Footer.tsx
+# TODO: Fix TypeScript Errors in Project
 
-## Tasks
-- [x] Install @emailjs/browser for email functionality
-- [ ] Update Footer.tsx to add "Links" section on the left with Home, About, Projects, Contact Me (using Framer Motion for animations)
-- [ ] Update Footer.tsx to add "Socials" section on the left with Github, Linkedin, X (Twitter), Instagram (using Framer Motion for animations)
-- [ ] Update Footer.tsx to add email contact section on the right: "Let's create great things together Drop your email and I'll contact you soon ;) email here..." with EmailJS integration
-- [ ] Test the email form submission
-- [ ] Verify Framer Motion animations are working
+## Steps to Complete
+
+1. **Fix use-outside-click.ts**: Update the callback function type to accept MouseEvent or TouchEvent parameter.
+2. **Convert RotatingText.jsx to RotatingText.tsx**: Add TypeScript interfaces and types for props and ref.
+3. **Update HeroContent.tsx**: Change import to use the new RotatingText.tsx file.
+4. **Verify fixes**: Ensure all TypeScript errors are resolved by running type check.
+
+## Progress Tracking
+
+- [x] Step 1: Update use-outside-click.ts
+- [x] Step 2: Create RotatingText.tsx
+- [x] Step 3: Update HeroContent.tsx import
+- [x] Step 4: Verify fixes

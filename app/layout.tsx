@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sankalp Space",
-  description: "This is the Portfolio Website of Sankalp Shrivastavw",
+  description: "This is the Portfolio Website of Sankalp Shrivastav",
+  icons: {
+    icon: "/sankalp_space.png",
+  },
 };
 
 export default function RootLayout({
