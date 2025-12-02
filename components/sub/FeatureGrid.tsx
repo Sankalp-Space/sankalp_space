@@ -37,10 +37,10 @@ const scatteredIcons = [
 ];
 
 export default function FeatureGrid() {
-  const containerRef = useRef<HTMLElement | null>(null);
-  const leftRef = useRef<HTMLElement | null>(null);
-  const centerRef = useRef<HTMLElement | null>(null);
-  const rightRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -66,7 +66,7 @@ export default function FeatureGrid() {
       <div className="space-y-6">
         {/* Top right card: Dev & Design with animated beams */}
         <div
-          ref={containerRef}
+          ref={containerRef as React.RefObject<HTMLDivElement>}
           className="bg-slate-900/80 border border-emerald-700/30 rounded-xl p-6 shadow-lg relative overflow-hidden"
         >
           {/* Animated beams between left->center and center->right */}
