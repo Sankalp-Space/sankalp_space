@@ -40,7 +40,7 @@ const Skills = () => {
     },
     {
       id: "react",
-      node: <SiReact className="text-4xl text-cyan-400" />,
+      node: <SiReact className="text-4xl text-emerald-400" />,
       title: "React.js",
     },
     {

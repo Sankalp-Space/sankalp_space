@@ -104,7 +104,7 @@ export default function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-6 py-3 text-sm rounded-full font-bold bg-gradient-to-r from-purple-500 to-cyan-500 text-white hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl flex-shrink-0 ml-4"
+                    className="px-6 py-3 text-sm rounded-full font-bold bg-gradient-to-r from-emerald-500 to-emerald-500 text-white hover:from-emerald-600 hover:to-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl flex-shrink-0 ml-4"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -214,7 +214,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          <strong className="text-cyan-400">Technologies:</strong> React.js, Node.js, Express.js, MongoDB, Tailwind CSS, IIS Server
+          <strong className="text-emerald-400">Technologies:</strong> React.js, Node.js, Express.js, MongoDB, Tailwind CSS, IIS Server
           <br /><br />
           Developed a comprehensive company website for DGN Infosolution, an IT services provider, featuring modern design and robust functionality. The platform serves as a digital showcase for their extensive range of IT solutions and transparent pricing structure. Key features include an intuitive service portfolio display showcasing software development, cloud solutions, and digital transformation services; a dynamic pricing module for flexible service packages; an admin-friendly content management system for easy updates; performance optimization through image compression and caching; responsive design ensuring seamless user experience across all devices; and integrated contact methods including forms and live chat.
         </p>
@@ -230,7 +230,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          <strong className="text-cyan-400">Technologies:</strong> React.js, Tailwind CSS, Framer Motion, EmailJS
+          <strong className="text-emerald-400">Technologies:</strong> React.js, Tailwind CSS, Framer Motion, EmailJS
           <br /><br />
           Developed a professional healthcare website for ImmunoDiag, a diagnostic laboratory specializing in medical testing services. The platform serves as a comprehensive digital presence for the lab, enabling patients and healthcare providers to access services and information seamlessly. Key features include an organized test services showcase with detailed descriptions, pricing, and preparation instructions; EmailJS integration for direct appointment scheduling and inquiries without complex backend infrastructure; a comprehensive contact information hub with multiple communication channels; educational patient resources about diagnostic procedures and health information; mobile-optimized responsive design ensuring accessibility across all devices; and smooth Framer Motion animations enhancing user experience for interactive elements and page transitions.
         </p>
@@ -246,7 +246,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          <strong className="text-cyan-400">Technologies:</strong> React.js, Tailwind CSS, Node.js, MongoDB, JWT, Razorpay API, ClipDrop API
+          <strong className="text-emerald-400">Technologies:</strong> React.js, Tailwind CSS, Node.js, MongoDB, JWT, Razorpay API, ClipDrop API
           <br /><br />
           Built a comprehensive AI SaaS platform that transforms text descriptions into high-quality images using advanced AI technology. The platform features a subscription-based model with credit system for monetization. Key features include ClipDrop API integration for converting text prompts into stunning visuals with multiple style options; JWT-based secure authentication with password hashing; a flexible credit system for purchasing and managing image generation credits; Razorpay payment gateway integration for seamless transactions; an intuitive user dashboard for credit management and generation history; and responsive design built with modern UI/UX principles for optimal experience across all devices.
         </p>
@@ -262,7 +262,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          <strong className="text-cyan-400">Technologies:</strong> Node.js, Express.js, Socket.io, Leaflet.js, HTML5 Geolocation API
+          <strong className="text-emerald-400">Technologies:</strong> Node.js, Express.js, Socket.io, Leaflet.js, HTML5 Geolocation API
           <br /><br />
           Developed a sophisticated real-time geolocation tracking system that enables live location sharing and monitoring across multiple users. The application showcases advanced real-time web development capabilities with seamless map integration and instant location updates. Key features include continuous GPS tracking with automatic location broadcasting to connected users; dynamic map visualization using Leaflet.js with custom markers and real-time position updates; Socket.io integration for instant bidirectional communication between server and multiple clients; multi-user support with unique identification and tracking; robust connection management with event handling for user connections and disconnections; performance optimization ensuring efficient data transmission and minimal latency; and privacy controls with user consent mechanisms and location permission handling for responsible tracking.
         </p>

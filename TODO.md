@@ -1,13 +1,9 @@
-- [ ] Fix swapped social icons in constants/index.ts (swap src for Discord and Instagram)
-- [ ] Remove duplicate skills from constants/index.ts (remove overlapping entries from Frontend_skill)
-- [ ] Remove redundant Float wrapper in HeroContent.tsx
-- [ ] Improve Navbar: add proper navigation links (Home, About, Projects, Skills, Contact), improve responsiveness
-- [ ] Fix linting errors:
-  - Skills.tsx: replace 'any' with proper type
-  - HeroContent.tsx: escape apostrophe
-  - ScrollStack.tsx: replace 'any' with proper type
-  - Projects.tsx: replace <img> with <Image>
-  - terminal.tsx: add missing dependencies to useEffect
-  - Remove unused imports and variables in Hero.tsx, Experience.tsx, FeatureGrid.tsx, timeline.tsx
-- [ ] Review and optimize animation dependencies in package.json
-- [ ] Test application after all fixes
+# TODO: Improve Footer.tsx
+
+## Tasks
+- [x] Install @emailjs/browser for email functionality
+- [ ] Update Footer.tsx to add "Links" section on the left with Home, About, Projects, Contact Me (using Framer Motion for animations)
+- [ ] Update Footer.tsx to add "Socials" section on the left with Github, Linkedin, X (Twitter), Instagram (using Framer Motion for animations)
+- [ ] Update Footer.tsx to add email contact section on the right: "Let's create great things together Drop your email and I'll contact you soon ;) email here..." with EmailJS integration
+- [ ] Test the email form submission
+- [ ] Verify Framer Motion animations are working

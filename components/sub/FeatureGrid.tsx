@@ -47,18 +47,18 @@ export default function FeatureGrid() {
       {/* Left large panel */}
       <div className="bg-slate-900/80 border border-emerald-800/20 rounded-xl p-6 shadow-lg relative overflow-hidden">
         <Terminal>
-          <TypingAnimation>initializing starship_sankalp...</TypingAnimation>
+          <TypingAnimation>npx create-next-app@latest starship_sankalp...</TypingAnimation>
           <AnimatedSpan>
-            loading modules: scalable thrusters, secure shields,
+            ✔ installing dependencies...: scalable thrusters, secure shields,
             hyper-performant UI
           </AnimatedSpan>
-          <AnimatedSpan>validating subsystem integrity... ✔</AnimatedSpan>
-          <AnimatedSpan>performing systems check... all green</AnimatedSpan>
+          <AnimatedSpan> ✔ validating subsystem integrity...</AnimatedSpan>
+          <AnimatedSpan> ✔ performing systems check... all green</AnimatedSpan>
           <TypingAnimation>executing deployment sequence...</TypingAnimation>
-          <TypingAnimation>status: online across the galaxy 🌌</TypingAnimation>
-          <TypingAnimation>
+          <TypingAnimation>Success! Project online across the galaxy 🌌</TypingAnimation>
+          {/* <TypingAnimation>
             Logs: No errors... which is suspicious
-          </TypingAnimation>
+          </TypingAnimation> */}
         </Terminal>
       </div>
 
