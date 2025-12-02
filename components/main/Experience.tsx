@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { Timeline } from "@/components/ui/timeline";
-import { SparklesText } from "@/components/ui/sparkles-text"
 import { HyperText } from "@/components/ui/hyper-text"
 export default function Experience() {
   const data = [

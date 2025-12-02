@@ -1,9 +1,8 @@
 "use client";
+import React from "react";
 import Shuffle from "../sub/Shuffle";
 import LogoLoop from "../sub/LogoLoop";
 import FeatureGrid from "../sub/FeatureGrid";
-
-const LogoLoopAny: any = LogoLoop;
 
 import {
   SiC,
@@ -23,6 +22,8 @@ import {
   SiDocker,
   SiKubernetes,
 } from "react-icons/si";
+
+const LogoLoopAny: React.ComponentType<any> = LogoLoop;
 
 const Skills = () => {
   const skillLogos = [
@@ -99,22 +100,6 @@ const Skills = () => {
       node: <SiKubernetes className="text-4xl text-sky-600" />,
       title: "Kubernetes",
     },
-  ];
-
-  const programming = ["C", "C++", "JavaScript", "TypeScript"];
-  const frameworks = [
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "Express.js",
-    "Tailwind CSS",
-  ];
-  const databases = ["MongoDB", "MySQL", "AWS"];
-  const tools = ["Git", "GitHub", "Postman", "Docker", "Kubernetes", "VS Code"];
-  const core = [
-    "Data Structures & Algorithms",
-    "Object-Oriented Programming (OOP)",
-    "DBMS",
   ];
 
   return (

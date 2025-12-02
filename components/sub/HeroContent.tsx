@@ -97,14 +97,14 @@ const HeroContent = () => {
             project exprience
           </span> */}
         </motion.div>
-        <motion.p
+        <motion.div
           variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-100 my-5 max-w-[600px]"
         >
         <motion.div variants={slideInFromRight(0.5)} className="flex">
-          <motion.p className="text-4xl  bg-none text-white  overflow-hidden  sm:py-1 md:py-2 justify-center rounded-l">
+          <div className="text-4xl bg-none text-white overflow-hidden sm:py-1 md:py-2 justify-center rounded-l">
             I&apos;m a
-          </motion.p>
+          </div>
           <RotatingText
             texts={[
               "Software Developer Engineer",
@@ -120,12 +120,12 @@ const HeroContent = () => {
             splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
             rotationInterval={2000}
-          />{" "}
+          />
         </motion.div>
         crafting websites, mobile apps, and software solutions. My projects
         work surprisingly well considering the amount of chai involved. Feel
         free to explore my work it's safe, I promise.
-      </motion.p>
+      </motion.div>
       <motion.div
         variants={slideInFromLeft(1)}
         className="flex space-x-6 max-w-[300px] relative z-40 pointer-events-auto"

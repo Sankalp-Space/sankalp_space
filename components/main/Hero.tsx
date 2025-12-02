@@ -3,8 +3,6 @@
 import React from "react";
 import HeroContent from "../sub/HeroContent";
 import StarsCanvas from "@/components/main/starBackground";
-import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/motion";
 import StickerPeel from '../sub/StickerPeel' ;
 
 

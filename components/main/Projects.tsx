@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import ProjectCard from "../sub/ProjectCard";
 import ExpandableCardDemo from "../expandable-card-demo-grid";
 import { ComicText } from "@/components/ui/comic-text"
 import DecryptedText from '../sub/DecryptedText';

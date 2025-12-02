@@ -97,8 +97,8 @@ export function Globe({
     return () => {
       globe.destroy()
       window.removeEventListener("resize", onResize)
-    }
-  }, [rs, config])
+    };
+  }, [rs, config]);
 
   return (
     <div

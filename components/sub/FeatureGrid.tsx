@@ -24,18 +24,6 @@ import {
   SiKubernetes,
 } from "react-icons/si";
 
-const scatteredIcons = [
-  SiC,
-  SiJavascript,
-  SiReact,
-  SiNodedotjs,
-  SiDocker,
-  SiGithub,
-  SiTailwindcss,
-  SiMysql,
-  SiKubernetes,
-];
-
 export default function FeatureGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
   const leftRef = useRef<HTMLDivElement>(null);

@@ -6,7 +6,7 @@ import {
   RxTwitterLogo,
   RxLinkedinLogo,
 } from "react-icons/rx";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 import { Confetti, ConfettiRef } from "@/components/ui/confetti";
 import { Globe } from "@/components/ui/globe"
@@ -97,7 +97,7 @@ const Footer = () => {
           {/* Middle: Email Form */}
           <div className="md:col-span-1 flex flex-col justify-center items-start">
             <h3 className="text-2xl font-bold text-white mb-2">
-              Let's create great things together
+              Let&apos;s create great things together
             </h3>
             <p className="text-gray-400 mb-6">
               Drop your email and I&apos;ll contact you soon ;)

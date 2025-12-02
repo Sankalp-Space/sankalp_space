@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useId, useRef, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
@@ -71,7 +72,7 @@ export default function ExpandableCardDemo() {
               className="w-full max-w-[700px] max-h-[85vh] flex flex-col bg-slate-900/95 backdrop-blur-md sm:rounded-3xl border border-slate-700/50 shadow-2xl"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
-                <img
+                <Image
                   width={200}
                   height={200}
                   src={active.src}
@@ -127,7 +128,7 @@ export default function ExpandableCardDemo() {
         ) : null}
       </AnimatePresence>
       <ul className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-stretch gap-6">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
@@ -139,7 +140,7 @@ export default function ExpandableCardDemo() {
           >
             <div className="flex flex-col w-full h-full">
               <motion.div layoutId={`image-${card.title}-${id}`} className="mb-4">
-                <img
+                <Image
                   width={100}
                   height={100}
                   src={card.src}
