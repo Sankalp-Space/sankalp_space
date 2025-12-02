@@ -176,7 +176,7 @@ const TextType: React.FC<TextTypeProps> = ({
       ref: containerRef,
       className: `text-type ${className}`,
       ...props
-    },
+    } as any,
     <span className="text-type__content" style={{ color: getCurrentTextColor() || 'inherit' }}>
       {displayedText}
     </span>,
