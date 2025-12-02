@@ -11,17 +11,8 @@ import { Highlighter } from "@/components/ui/highlighter";
 
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import {
-  SiC,
-  SiJavascript,
-  SiReact,
-  SiNodedotjs,
-  SiDocker,
-  SiGithub,
-  SiTailwindcss,
   SiFigma,
-  SiMysql,
   SiRocket,
-  SiKubernetes,
 } from "react-icons/si";
 
 export default function FeatureGrid() {

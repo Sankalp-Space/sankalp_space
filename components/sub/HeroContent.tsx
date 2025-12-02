@@ -124,7 +124,7 @@ const HeroContent = () => {
         </motion.div>
         crafting websites, mobile apps, and software solutions. My projects
         work surprisingly well considering the amount of chai involved. Feel
-        free to explore my work it's safe, I promise.
+        free to explore my work it&apos;s safe, I promise.
       </motion.div>
       <motion.div
         variants={slideInFromLeft(1)}

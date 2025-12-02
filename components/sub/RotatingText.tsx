@@ -5,6 +5,13 @@ import { motion, AnimatePresence, Transition } from 'framer-motion';
 
 import './RotatingText.css';
 
+interface RotatingTextRef {
+  next: () => void;
+  previous: () => void;
+  jumpTo: (index: number) => void;
+  reset: () => void;
+}
+
 interface RotatingTextProps {
   texts: string[];
   transition?: Transition;
@@ -29,7 +36,7 @@ function cn(...classes: (string | undefined)[]): string {
   return classes.filter(Boolean).join(' ');
 }
 
-const RotatingText = forwardRef<any, RotatingTextProps>((props, ref) => {
+const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>((props, ref) => {
   const {
     texts,
     transition = { type: 'spring', damping: 25, stiffness: 300 },
@@ -102,7 +109,7 @@ const RotatingText = forwardRef<any, RotatingTextProps>((props, ref) => {
         const randomIndex = Math.floor(Math.random() * total);
         return Math.abs(randomIndex - index) * staggerDuration;
       }
-      return Math.abs((staggerFrom as any) - index) * staggerDuration;
+      return Math.abs(parseInt(staggerFrom) - index) * staggerDuration;
     },
     [staggerFrom, staggerDuration]
   );
@@ -165,7 +172,7 @@ const RotatingText = forwardRef<any, RotatingTextProps>((props, ref) => {
   return (
     <motion.span className={cn('text-rotate', mainClassName)} {...rest} layout transition={transition}>
       <span className="text-rotate-sr-only">{texts[currentTextIndex]}</span>
-      <AnimatePresence mode={animatePresenceMode as any} initial={animatePresenceInitial}>
+      <AnimatePresence mode={animatePresenceMode as "wait" | "sync" | "popLayout"} initial={animatePresenceInitial}>
         <motion.span
           key={currentTextIndex}
           className={cn(splitBy === 'lines' ? 'text-rotate-lines' : 'text-rotate')}

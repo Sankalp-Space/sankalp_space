@@ -6,7 +6,7 @@ import './TextType.css';
 
 interface TextTypeProps {
   text: string | string[];
-  as?: string;
+  as?: React.ComponentType | string;
   typingSpeed?: number;
   initialDelay?: number;
   pauseDuration?: number;
@@ -171,7 +171,7 @@ const TextType: React.FC<TextTypeProps> = ({
     hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
   return createElement(
-    Component as any,
+    Component as React.ComponentType,
     {
       ref: containerRef,
       className: `text-type ${className}`,

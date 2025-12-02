@@ -23,7 +23,39 @@ import {
   SiKubernetes,
 } from "react-icons/si";
 
-const LogoLoopAny: React.ComponentType<any> = LogoLoop;
+interface LogoItem {
+  id: string;
+  node?: React.ReactNode;
+  title?: string;
+  href?: string;
+  ariaLabel?: string;
+  src?: string;
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
+interface LogoLoopProps {
+  logos: LogoItem[];
+  speed?: number;
+  direction?: 'left' | 'right' | 'up' | 'down';
+  width?: string | number;
+  logoHeight?: number;
+  gap?: number;
+  pauseOnHover?: boolean;
+  hoverSpeed?: number;
+  fadeOut?: boolean;
+  fadeOutColor?: string;
+  scaleOnHover?: boolean;
+  renderItem?: (item: LogoItem, key: string) => React.ReactNode;
+  ariaLabel?: string;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const LogoLoopTyped: React.ComponentType<LogoLoopProps> = LogoLoop as React.ComponentType<LogoLoopProps>;
 
 const Skills = () => {
   const skillLogos = [
@@ -137,7 +169,7 @@ const Skills = () => {
 
         <div className="-mt-6 md:-mt-24">
           <div className="relative h-52 md:h-64 overflow-hidden rounded-full p-2 md:p-4 flex items-center">
-            <LogoLoopAny
+            <LogoLoopTyped
               logos={skillLogos}
               speed={90}
               direction="left"
