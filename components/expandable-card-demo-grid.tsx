@@ -132,7 +132,7 @@ export default function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => {
-              console.log("Card clicked:", card.title);
+              
               setActive(card);
             }}
             className="p-6 flex flex-col bg-slate-900/80 hover:bg-slate-800/90 rounded-2xl cursor-pointer border border-slate-700/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 h-full"
