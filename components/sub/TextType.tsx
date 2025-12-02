@@ -170,25 +170,47 @@ const TextType: React.FC<TextTypeProps> = ({
   const shouldHideCursor =
     hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
-  return createElement(
-    Component as React.ComponentType,
-    {
-      ref: containerRef,
-      className: `text-type ${className}`,
-      ...props
-    } as any,
-    <span className="text-type__content" style={{ color: getCurrentTextColor() || 'inherit' }}>
-      {displayedText}
-    </span>,
-    showCursor && (
-      <span
-        ref={cursorRef}
-        className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
-      >
-        {cursorCharacter}
-      </span>
-    )
-  );
+  const elementProps = {
+    className: `text-type ${className}`,
+    ...props
+  };
+
+  if (typeof Component === 'string') {
+    return createElement(
+      Component,
+      elementProps as React.HTMLAttributes<HTMLElement>,
+      <span className="text-type__content" style={{ color: getCurrentTextColor() || 'inherit' }}>
+        {displayedText}
+      </span>,
+      showCursor && (
+        <span
+          ref={cursorRef}
+          className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
+        >
+          {cursorCharacter}
+        </span>
+      )
+    );
+  } else {
+    return createElement(
+      Component,
+      {
+        ...elementProps,
+        ref: containerRef
+      } as React.ComponentProps<typeof Component>,
+      <span className="text-type__content" style={{ color: getCurrentTextColor() || 'inherit' }}>
+        {displayedText}
+      </span>,
+      showCursor && (
+        <span
+          ref={cursorRef}
+          className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
+        >
+          {cursorCharacter}
+        </span>
+      )
+    );
+  }
 };
 
 export default TextType;
