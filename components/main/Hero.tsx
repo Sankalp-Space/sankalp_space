@@ -10,7 +10,7 @@ import StickerPeel from '../sub/StickerPeel' ;
 
 const Hero = () => {
   return (
-    <div className="relative flex flex-col h-full w-full justify-top items-center ">
+    <div className="relative flex flex-col h-full w-full justify-top items-center z-10">
       
       <StickerPeel
         imageSrc='/sankalp_space.png'

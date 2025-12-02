@@ -24,8 +24,7 @@ const Navbar = () => {
         className="h-auto w-auto flex flex-row items-center"
         initial={{ opacity: 1, y: 0 }}
         animate={{
-          opacity: isScrolled ? 0 : 1,
-          y: isScrolled ? -50 : 0
+          opacity: isScrolled ? 0 : 1
         }}
         transition={{
           duration: 0.5,

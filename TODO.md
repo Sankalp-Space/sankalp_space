@@ -1,7 +1,13 @@
-- [ ] Fix linting errors in layout.tsx, page.tsx, Footer.tsx, starBackground.tsx, HeroContent.tsx
-- [ ] Correct social media icons in Footer.tsx (Discord and Instagram swapped)
+- [ ] Fix swapped social icons in constants/index.ts (swap src for Discord and Instagram)
+- [ ] Remove duplicate skills from constants/index.ts (remove overlapping entries from Frontend_skill)
 - [ ] Remove redundant Float wrapper in HeroContent.tsx
-- [ ] Remove duplicate skills from constants/index.ts
-- [ ] Improve StaggeredMenu: fix logo path, add proper navigation links, improve responsiveness
-- [ ] Review and optimize animation dependencies
+- [ ] Improve Navbar: add proper navigation links (Home, About, Projects, Skills, Contact), improve responsiveness
+- [ ] Fix linting errors:
+  - Skills.tsx: replace 'any' with proper type
+  - HeroContent.tsx: escape apostrophe
+  - ScrollStack.tsx: replace 'any' with proper type
+  - Projects.tsx: replace <img> with <Image>
+  - terminal.tsx: add missing dependencies to useEffect
+  - Remove unused imports and variables in Hero.tsx, Experience.tsx, FeatureGrid.tsx, timeline.tsx
+- [ ] Review and optimize animation dependencies in package.json
 - [ ] Test application after all fixes

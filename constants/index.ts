@@ -1,4 +1,4 @@
-  export const Skill_data = [
+    export const Skill_data = [
     {
       skill_name: "Html 5",
       Image: "/html.png",
@@ -64,7 +64,7 @@
   export const Socials = [
     {
       name: "Discord",
-      src: "/instagram.svg",
+      src: "/discord.svg",
     },
     {
       name: "Facebook",
@@ -72,7 +72,7 @@
     },
     {
       name: "Instagram",
-      src: "/discord.svg",
+      src: "/instagram.svg",
     },
   ];
   
