@@ -75,7 +75,7 @@ export default function Experience() {
   ];
 
   return (
-    <section className="relative w-full ">
+    <section className="relative w-full " id="experience">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <header className="mb-8 text-center">

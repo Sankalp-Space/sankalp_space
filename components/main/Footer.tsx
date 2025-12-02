@@ -27,17 +27,18 @@ const Footer = () => {
   }, [state.succeeded]);
 
   const links = [
-    { name: "Home", href: "/" },
-    { name: "Skill", href: "#about-me" },
+    { name: "Home", href: '#home' },
+    { name: "Skill", href: "#skills" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact Me", href: "#contact" },
+    
   ];
 
   const socials = [
     { name: "Github", icon: <RxGithubLogo />, href: "https://github.com/Sankalp-Space" },
-    { name: "Linkedin", icon: <RxLinkedinLogo />, href: "https://www.linkedin.com/in/sankalpshrivastav/" },
-    { name: "X (Twitter)", icon: <RxTwitterLogo />, href: "https://x.com/Sankalp_shri" },
-    { name: "Instagram", icon: <RxInstagramLogo />, href: "https://www.instagram.com/sankalp_shri/" },
+    { name: "Linkedin", icon: <RxLinkedinLogo />, href: "https://www.linkedin.com/in/sankalp-space1/" },
+    { name: "X (Twitter)", icon: <RxTwitterLogo />, href: "https://x.com/sankalp_spacex" },
+    { name: "Instagram", icon: <RxInstagramLogo />, href: "https://www.instagram.com/sankalp_shrivastav95?igsh=MThkZDlyOGJrYnZpeg==" },
   ];
 
   const MotionLink = motion.a;

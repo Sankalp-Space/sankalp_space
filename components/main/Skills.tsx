@@ -118,7 +118,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-12 bg-transparent text-white mt-16">
+    <section className="py-12 bg-transparent text-white mt-16" id="skills">
       <div className="container mx-auto px-6 mt-8">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-block p-1 rounded-xl bg-none shadow-lg">
