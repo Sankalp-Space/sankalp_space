@@ -44,11 +44,11 @@ const Footer = () => {
   const MotionLink = motion.a;
 
   return (
-    <div id="contact" className="w-full h-full bg-transparent text-gray-200 shadow-lg   relative z-30 mt-15">
+    <div id="contact" className="w-full h-full bg-transparent text-gray-200 shadow-lg   relative z-[20] mt-15">
       <Confetti
         ref={confettiRef}
         manualstart={true}
-        className="absolute left-0 top-0 w-full h-full z-50 pointer-events-none"
+        className="absolute left-0 top-0 w-full h-full z-10 pointer-events-none"
       />
       <div className="w-full max-w-7xl mx-auto flex flex-col">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 items-center gap-12 md:gap-8 mb-12">

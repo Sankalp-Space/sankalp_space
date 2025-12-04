@@ -7,7 +7,7 @@ import DecryptedText from '../sub/DecryptedText';
 const Projects = () => {
   return (
     <div
-      className="flex flex-col items-center py-20 relative z-10"
+    className="flex flex-col items-center py-20 relative z-[30]"
       id="projects"
     >
       <h1 className='text-white'><ComicText>Projects</ComicText></h1>
