@@ -86,6 +86,8 @@ interface TypingAnimationProps extends MotionProps {
   delay?: number
   as?: React.ElementType
   startOnView?: boolean
+  loop?: boolean
+  loopDelay?: number
 }
 
 export const TypingAnimation = ({
@@ -95,6 +97,8 @@ export const TypingAnimation = ({
   delay = 0,
   as: Component = "span",
   startOnView = true,
+  loop = false,
+  loopDelay = 2000,
   ...props
 }: TypingAnimationProps) => {
   if (typeof children !== "string") {
@@ -111,6 +115,7 @@ export const TypingAnimation = ({
 
   const [displayedText, setDisplayedText] = useState<string>("")
   const [started, setStarted] = useState(false)
+  const [completed, setCompleted] = useState(false)
   const elementRef = useRef<HTMLElement | null>(null)
   const isInView = useInView(elementRef as React.RefObject<Element>, {
     amount: 0.3,
@@ -161,13 +166,30 @@ export const TypingAnimation = ({
         if (sequence && itemIndex !== null) {
           sequence.completeItem(itemIndex)
         }
+        if (loop) {
+          setTimeout(() => {
+            setDisplayedText("")
+            i = 0
+            const restartTyping = setInterval(() => {
+              if (i < children.length) {
+                setDisplayedText(children.substring(0, i + 1))
+                i++
+              } else {
+                clearInterval(restartTyping)
+                if (sequence && itemIndex !== null) {
+                  sequence.completeItem(itemIndex)
+                }
+              }
+            }, duration)
+          }, loopDelay)
+        }
       }
     }, duration)
 
     return () => {
       clearInterval(typingEffect)
     }
-  }, [children, duration, started, itemIndex, sequence])
+  }, [children, duration, started, itemIndex, sequence, loop, loopDelay])
 
   return (
     <MotionComponent
@@ -185,6 +207,8 @@ interface TerminalProps {
   className?: string
   sequence?: boolean
   startOnView?: boolean
+  loop?: boolean
+  loopDelay?: number
 }
 
 export const Terminal = ({
@@ -192,6 +216,8 @@ export const Terminal = ({
   className,
   sequence = true,
   startOnView = true,
+  loop = false,
+  loopDelay = 2000,
 }: TerminalProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(containerRef as React.RefObject<Element>, {
@@ -200,7 +226,8 @@ export const Terminal = ({
   })
 
   const [activeIndex, setActiveIndex] = useState(0)
-  const sequenceHasStarted = sequence ? !startOnView || isInView : false
+  const [sequenceCompleted, setSequenceCompleted] = useState(false)
+  const sequenceHasStarted = sequence ? (!startOnView || isInView) && !sequenceCompleted : false
 
   const contextValue = useMemo<SequenceContextValue | null>(() => {
     if (!sequence) return null
@@ -222,6 +249,8 @@ export const Terminal = ({
       </ItemIndexContext.Provider>
     ))
   }, [children, sequence])
+
+  const totalItems = wrappedChildren.length
 
   const content = (
     <div
