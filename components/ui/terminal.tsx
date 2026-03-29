@@ -115,7 +115,6 @@ export const TypingAnimation = ({
 
   const [displayedText, setDisplayedText] = useState<string>("")
   const [started, setStarted] = useState(false)
-  const [completed, setCompleted] = useState(false)
   const elementRef = useRef<HTMLElement | null>(null)
   const isInView = useInView(elementRef as React.RefObject<Element>, {
     amount: 0.3,
@@ -216,8 +215,6 @@ export const Terminal = ({
   className,
   sequence = true,
   startOnView = true,
-  loop = false,
-  loopDelay = 2000,
 }: TerminalProps) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(containerRef as React.RefObject<Element>, {
@@ -226,8 +223,7 @@ export const Terminal = ({
   })
 
   const [activeIndex, setActiveIndex] = useState(0)
-  const [sequenceCompleted, setSequenceCompleted] = useState(false)
-  const sequenceHasStarted = sequence ? (!startOnView || isInView) && !sequenceCompleted : false
+  const sequenceHasStarted = sequence ? !startOnView || isInView : false
 
   const contextValue = useMemo<SequenceContextValue | null>(() => {
     if (!sequence) return null
@@ -249,8 +245,6 @@ export const Terminal = ({
       </ItemIndexContext.Provider>
     ))
   }, [children, sequence])
-
-  const totalItems = wrappedChildren.length
 
   const content = (
     <div
