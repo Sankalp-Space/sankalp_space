@@ -21,9 +21,9 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="relative z-[20] flex w-full flex-col items-start justify-start px-6 pt-36 pb-20 sm:px-8 md:mt-40 md:flex-row md:items-center md:justify-center md:px-20 md:pt-0 md:pb-0"
     >
-      <div className="h-full  w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="flex h-full w-full flex-col justify-center gap-5 text-start md:m-auto md:max-w-[600px]">
         {/* <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] "
@@ -36,7 +36,7 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-8 mt-8 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="mt-6 flex h-auto w-full max-w-[600px] flex-col gap-4 text-[clamp(3.75rem,18vw,6rem)] leading-[0.9] font-bold text-white md:mt-8 md:gap-8"
         >
           <TextType
             text={[
@@ -87,6 +87,7 @@ const HeroContent = () => {
             showCursor={true}
             cursorCharacter="|"
             textColors={["#ffffff", "#b49bff", "#7042f8"]}
+            className="max-w-full break-words"
           />
           {/* <span>
             Providing
@@ -99,10 +100,13 @@ const HeroContent = () => {
         </motion.div>
         <motion.div
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-100 my-5 max-w-[600px]"
+          className="my-5 max-w-[600px] text-base leading-8 text-gray-100 sm:text-lg"
         >
-        <motion.div variants={slideInFromRight(0.5)} className="flex">
-          <div className="text-4xl bg-none text-white overflow-hidden sm:py-1 md:py-2 justify-center rounded-l">
+        <motion.div
+          variants={slideInFromRight(0.5)}
+          className="mb-4 flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
+        >
+          <div className="overflow-hidden rounded-l bg-none text-2xl text-white sm:py-1 sm:text-3xl md:py-2 md:text-4xl">
             I&apos;m a
           </div>
           <RotatingText
@@ -111,7 +115,7 @@ const HeroContent = () => {
               "Full Stack Developer",
               "Backend Developer",
             ]}
-            mainClassName="px-2 sm:px-2 md:px-3 bg-none text-white text-4xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+            mainClassName="overflow-hidden rounded-lg bg-none px-0 text-2xl text-white sm:px-2 sm:text-3xl md:px-3 md:text-4xl"
             staggerFrom="last"
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -128,7 +132,7 @@ const HeroContent = () => {
       </motion.div>
       <motion.div
         variants={slideInFromLeft(1)}
-        className="flex space-x-6 max-w-[300px] relative z-40 pointer-events-auto"
+        className="relative z-40 flex max-w-[300px] space-x-6 pt-2 pointer-events-auto"
       >
         <motion.a
           href="https://github.com/Sankalp-Space"
@@ -171,28 +175,28 @@ const HeroContent = () => {
           <SiLeetcode />
         </motion.a>
       </motion.div>
+      {isMobile && <div aria-hidden className="h-48 w-full shrink-0" />}
       </div>
-      <motion.div
-        variants={slideInFromRight(0.5)}
-        className="w-full h-full flex justify-center items-center"
-      >
-        <figure
-          className="absolute inset-0"
-          style={{ width: "100vw", height: "100vh" }}
+      {!isMobile && (
+        <motion.div
+          variants={slideInFromRight(0.5)}
+          className="flex h-full w-full items-center justify-center"
         >
-          <Canvas camera={{ position: [0.5, 1, 2] }}>
-            <Suspense fallback={<Loader />}>
-              <Float>
-                <Astronaut
-                  scale={isMobile && 0.23}
-                  position={isMobile && [1, -1.5, 1]}
-                />
-              </Float>
-              <Rig />
-            </Suspense>
-          </Canvas>
-        </figure>
-      </motion.div>
+          <figure
+            className="pointer-events-none absolute inset-0"
+            style={{ width: "100vw", height: "100vh" }}
+          >
+            <Canvas camera={{ position: [0.5, 1, 2] }}>
+              <Suspense fallback={<Loader />}>
+                <Float>
+                  <Astronaut />
+                </Float>
+                <Rig />
+              </Suspense>
+            </Canvas>
+          </figure>
+        </motion.div>
+      )}
     </motion.div>
   );
 };

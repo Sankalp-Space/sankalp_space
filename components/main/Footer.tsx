@@ -44,16 +44,16 @@ const Footer = () => {
   const MotionLink = motion.a;
 
   return (
-    <div id="contact" className="w-full h-full bg-transparent text-gray-200 shadow-lg   relative z-[20] mt-15">
+    <div id="contact" className="relative z-[20] mt-16 w-full bg-transparent text-gray-200 shadow-lg">
       <Confetti
         ref={confettiRef}
         manualstart={true}
         className="absolute left-0 top-0 w-full h-full z-10 pointer-events-none"
       />
-      <div className="w-full max-w-7xl mx-auto flex flex-col">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 items-center gap-12 md:gap-8 mb-12">
+      <div className="mx-auto flex w-full max-w-7xl flex-col px-6 pb-8 sm:px-8">
+        <div className="mb-12 grid w-full grid-cols-1 items-start gap-12 md:grid-cols-3 md:items-center md:gap-8">
           {/* Left Side: Links & Socials */}
-          <div className="md:col-span-1 grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-8 sm:gap-10 md:col-span-1">
             {/* Links */}
             <div>
               <div className="font-bold text-lg mb-4">Links</div>
@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
 
           {/* Middle: Email Form */}
-          <div className="md:col-span-1 flex flex-col justify-center items-start">
+          <div className="flex flex-col items-start justify-center md:col-span-1">
             <h3 className="text-2xl font-bold text-white mb-2">
               Let&apos;s create great things together
             </h3>
@@ -111,8 +111,8 @@ const Footer = () => {
                 Thanks for reaching out! I&apos;ll be in touch soon.
               </motion.p>
             ) : (
-              <form onSubmit={handleSubmit} className="w-full max-w-md flex items-start flex-col">
-                <div className="w-full flex items-center gap-2">
+              <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col items-start gap-3">
+                <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                   <input
                     id="email"
                     type="email"
@@ -141,13 +141,13 @@ const Footer = () => {
             )}
           </div>
           {/* Right Side: Globe */}
-          <div className="md:col-span-1 w-full h-[200px] md:h-[150px] flex items-center justify-center relative -mt-80">
-            <Globe className="w-full md:h-auto" />
+          <div className="relative flex h-[260px] w-full items-center justify-center md:col-span-1 md:-mt-96 md:h-[150px]">
+            <Globe className="max-w-[340px] md:max-w-[420px]" />
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="w-full pt-8 border-t border-slate-700/50 text-center text-gray-400 text-sm">
+        <div className="w-full border-t border-slate-700/50 pt-8 text-center text-sm text-gray-400">
           &copy; {new Date().getFullYear()} Sankalp Shrivastav. All rights reserved.
         </div>
       </div>

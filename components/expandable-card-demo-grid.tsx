@@ -69,7 +69,7 @@ export default function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-            className="w-full max-w-[700px] max-h-[85vh] flex flex-col bg-slate-900/95 backdrop-blur-md sm:rounded-3xl border border-slate-700/50 shadow-2xl"
+              className="w-full max-w-[700px] max-h-[85vh] flex flex-col bg-slate-900/95 backdrop-blur-md sm:rounded-3xl border border-slate-700/50 shadow-2xl"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -133,7 +133,6 @@ export default function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => {
-              
               setActive(card);
             }}
             className="p-6 flex flex-col bg-slate-900/80 hover:bg-slate-800/90 rounded-2xl cursor-pointer border border-slate-700/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 h-full"
@@ -223,24 +222,24 @@ const cards = [
     },
   },
   {
-    description: "Healthcare Website Development",
-    title: "ImmunoDiag — Diagnostic Lab Website",
-    src: "/immunodiag.png",
+    description: "Diagnostic Booking Platform",
+    title: "CRL Diagnostics Website",
+    src: "/crl.png",
     ctaText: "Visit Site",
-    ctaLink: "https://immunodiag.com",
+    ctaLink: "https://crldiagnostics.com/",
     content: () => {
       return (
         <p>
-          <strong className="text-emerald-400">Technologies:</strong> React.js, Tailwind CSS, Framer Motion, EmailJS
+          <strong className="text-emerald-400">Highlights:</strong> Searchable tests, online booking, home collection, patient reports, LIS access, health packages, and location support
           <br /><br />
-          Developed a professional healthcare website for ImmunoDiag, a diagnostic laboratory specializing in medical testing services. The platform serves as a comprehensive digital presence for the lab, enabling patients and healthcare providers to access services and information seamlessly. Key features include an organized test services showcase with detailed descriptions, pricing, and preparation instructions; EmailJS integration for direct appointment scheduling and inquiries without complex backend infrastructure; a comprehensive contact information hub with multiple communication channels; educational patient resources about diagnostic procedures and health information; mobile-optimized responsive design ensuring accessibility across all devices; and smooth Framer Motion animations enhancing user experience for interactive elements and page transitions.
+          Built a full diagnostic website experience for CRL Diagnostics focused on making patient access faster and clearer across the entire journey. The platform highlights searchable tests and packages, dedicated entry points for home sample collection, patient reports and LIS portals, seasonal test discovery, and location-based support for a large collection network. It also presents trust signals such as quality workflows, advanced diagnostics, service reach, and support access in a clean healthcare-first interface designed for patients, doctors, and partner institutions.
         </p>
       );
     },
   },
   {
     description: "AI SaaS Platform",
-    title: "Imagify — AI Text-to-Image",
+    title: "Imagify - AI Text-to-Image",
     src: "/imagify.png",
     ctaText: "View Demo",
     ctaLink: "https://imagify1-13gr.onrender.com",
@@ -255,17 +254,17 @@ const cards = [
     },
   },
   {
-    description: "Real-Time Geolocation Tracking Application",
-    title: "Real-Time Geolocation Tracking Application",
-    src: "/location.png",
-    ctaText: "Github Repo",
-    ctaLink: "https://github.com/Sankalp-Space/Realtime-Trackerr",
+    description: "Healthcare Website Development",
+    title: "ImmunoDiag - Diagnostic Lab Website",
+    src: "/immunodiag.png",
+    ctaText: "Visit Site",
+    ctaLink: "https://immunodiag.com",
     content: () => {
       return (
         <p>
-          <strong className="text-emerald-400">Technologies:</strong> Node.js, Express.js, Socket.io, Leaflet.js, HTML5 Geolocation API
+          <strong className="text-emerald-400">Technologies:</strong> React.js, Tailwind CSS, Framer Motion, EmailJS
           <br /><br />
-          Developed a sophisticated real-time geolocation tracking system that enables live location sharing and monitoring across multiple users. The application showcases advanced real-time web development capabilities with seamless map integration and instant location updates. Key features include continuous GPS tracking with automatic location broadcasting to connected users; dynamic map visualization using Leaflet.js with custom markers and real-time position updates; Socket.io integration for instant bidirectional communication between server and multiple clients; multi-user support with unique identification and tracking; robust connection management with event handling for user connections and disconnections; performance optimization ensuring efficient data transmission and minimal latency; and privacy controls with user consent mechanisms and location permission handling for responsible tracking.
+          Developed a professional healthcare website for ImmunoDiag, a diagnostic laboratory specializing in medical testing services. The platform serves as a comprehensive digital presence for the lab, enabling patients and healthcare providers to access services and information seamlessly. Key features include an organized test services showcase with detailed descriptions, pricing, and preparation instructions; EmailJS integration for direct appointment scheduling and inquiries without complex backend infrastructure; a comprehensive contact information hub with multiple communication channels; educational patient resources about diagnostic procedures and health information; mobile-optimized responsive design ensuring accessibility across all devices; and smooth Framer Motion animations enhancing user experience for interactive elements and page transitions.
         </p>
       );
     },
