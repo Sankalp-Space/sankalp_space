@@ -3,6 +3,7 @@ import React from "react";
 import Shuffle from "../sub/Shuffle";
 import LogoLoop from "../sub/LogoLoop";
 import FeatureGrid from "../sub/FeatureGrid";
+import { useResponsiveLayoutKey } from "@/hooks/use-responsive-layout-key";
 
 import {
   SiC,
@@ -58,6 +59,7 @@ interface LogoLoopProps {
 const LogoLoopTyped: React.ComponentType<LogoLoopProps> = LogoLoop as React.ComponentType<LogoLoopProps>;
 
 const Skills = () => {
+  const layoutKey = useResponsiveLayoutKey([768, 1024]);
   const skillLogos = [
     { id: "c", node: <SiC className="text-4xl" />, title: "C" },
     { id: "cpp", node: <SiCplusplus className="text-4xl" />, title: "C++" },
@@ -141,6 +143,7 @@ const Skills = () => {
           <div className="inline-block p-1 rounded-xl bg-none shadow-lg">
             <div className=" rounded-lg  ">
               <Shuffle
+                key={`skills-title-${layoutKey}`}
                 text="Skills & Tools"
                 shuffleDirection="right"
                 duration={0.45}
@@ -170,6 +173,7 @@ const Skills = () => {
         <div className="-mt-6 md:-mt-24">
           <div className="relative h-52 md:h-64 overflow-hidden rounded-full p-2 md:p-4 flex items-center">
             <LogoLoopTyped
+              key={`skills-loop-${layoutKey}`}
               logos={skillLogos}
               speed={90}
               direction="left"
@@ -185,7 +189,7 @@ const Skills = () => {
         </div>
         <div>
           {/* Feature grid (Multiple Tech Stack, Dev & Design, Open to Collaborations) */}
-          <FeatureGrid />
+          <FeatureGrid key={`skills-grid-${layoutKey}`} />
         </div>
       </div>
     </section>

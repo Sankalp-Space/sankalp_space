@@ -13,9 +13,11 @@ import TextType from "./TextType";
 import RotatingText from "./RotatingText";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { useResponsiveLayoutKey } from "@/hooks/use-responsive-layout-key";
 
 const HeroContent = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
+  const layoutKey = useResponsiveLayoutKey([854]);
 
   return (
     <motion.div
@@ -36,9 +38,10 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="mt-6 flex h-auto w-full max-w-[600px] flex-col gap-4 text-[clamp(3.75rem,18vw,6rem)] leading-[0.9] font-bold text-white md:mt-8 md:gap-8"
+          className="mt-6 flex min-h-[10.5rem] w-full max-w-[600px] flex-col gap-4 overflow-hidden text-[clamp(2.9rem,14vw,5.5rem)] leading-[0.92] font-bold text-white md:mt-8 md:min-h-[7.5rem] md:gap-8"
         >
           <TextType
+            key={`hero-greeting-${layoutKey}`}
             text={[
               "Hello World",
               "Hola Mundo",
@@ -87,7 +90,7 @@ const HeroContent = () => {
             showCursor={true}
             cursorCharacter="|"
             textColors={["#ffffff", "#b49bff", "#7042f8"]}
-            className="max-w-full break-words"
+            className="block max-w-full whitespace-nowrap tracking-tight"
           />
           {/* <span>
             Providing
@@ -110,6 +113,7 @@ const HeroContent = () => {
             I&apos;m a
           </div>
           <RotatingText
+            key={`hero-role-${layoutKey}`}
             texts={[
               "Software Developer Engineer",
               "Full Stack Developer",
@@ -120,10 +124,11 @@ const HeroContent = () => {
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-120%", opacity: 0 }}
-            staggerDuration={0.025}
+            staggerDuration={isMobile ? 0 : 0.06}
+            splitBy="words"
             splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={2000}
+            rotationInterval={isMobile ? 2600 : 2000}
           />
         </motion.div>
         crafting websites, mobile apps, and software solutions. My projects
