@@ -5,7 +5,6 @@ import { Astronaut } from "./Astronaut";
 import React from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
-import { useMediaQuery } from "react-responsive";
 import { easing } from "maath";
 import { Suspense } from "react";
 import Loader from "./Loader";
@@ -16,8 +15,8 @@ import { SiLeetcode } from "react-icons/si";
 import { useResponsiveLayoutKey } from "@/hooks/use-responsive-layout-key";
 
 const HeroContent = () => {
-  const isMobile = useMediaQuery({ maxWidth: 853 });
   const layoutKey = useResponsiveLayoutKey([854]);
+  const isCompactLayout = layoutKey === "bp-0";
 
   return (
     <motion.div
@@ -124,11 +123,11 @@ const HeroContent = () => {
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-120%", opacity: 0 }}
-            staggerDuration={isMobile ? 0 : 0.06}
+            staggerDuration={isCompactLayout ? 0 : 0.06}
             splitBy="words"
             splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={isMobile ? 2600 : 2000}
+            rotationInterval={isCompactLayout ? 2600 : 2000}
           />
         </motion.div>
         crafting websites, mobile apps, and software solutions. My projects
@@ -180,28 +179,26 @@ const HeroContent = () => {
           <SiLeetcode />
         </motion.a>
       </motion.div>
-      {isMobile && <div aria-hidden className="h-48 w-full shrink-0" />}
+      <div aria-hidden className="h-48 w-full shrink-0 md:hidden" />
       </div>
-      {!isMobile && (
-        <motion.div
-          variants={slideInFromRight(0.5)}
-          className="flex h-full w-full items-center justify-center"
+      <motion.div
+        variants={slideInFromRight(0.5)}
+        className="hidden h-full w-full items-center justify-center md:flex"
+      >
+        <figure
+          className="pointer-events-none absolute inset-0"
+          style={{ width: "100vw", height: "100vh" }}
         >
-          <figure
-            className="pointer-events-none absolute inset-0"
-            style={{ width: "100vw", height: "100vh" }}
-          >
-            <Canvas camera={{ position: [0.5, 1, 2] }}>
-              <Suspense fallback={<Loader />}>
-                <Float>
-                  <Astronaut />
-                </Float>
-                <Rig />
-              </Suspense>
-            </Canvas>
-          </figure>
-        </motion.div>
-      )}
+          <Canvas camera={{ position: [0.5, 1, 2] }}>
+            <Suspense fallback={<Loader />}>
+              <Float>
+                <Astronaut />
+              </Float>
+              <Rig />
+            </Suspense>
+          </Canvas>
+        </figure>
+      </motion.div>
     </motion.div>
   );
 };

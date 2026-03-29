@@ -119,11 +119,14 @@ const Footer = () => {
                     name="email"
                     placeholder="email here..."
                     required
+                    autoComplete="email"
+                    suppressHydrationWarning
                     className="w-full px-4 py-3 bg-slate-800/50 border border-emerald-700/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-300"
                   />
                   <motion.button
                     type="submit"
                     disabled={state.submitting}
+                    suppressHydrationWarning
                     className="px-6 py-3 rounded-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
